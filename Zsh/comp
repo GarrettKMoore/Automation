@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+# Path to your Python script
+PYTHON_SCRIPT="/home/garrett/Personal/Automation/Python/compile_notes.py"
+
+# Execute the Python script with arguments
+python3 "$PYTHON_SCRIPT"

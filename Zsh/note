@@ -1,0 +1,21 @@
+#!/bin/zsh
+
+# A simple Zsh script to create a new Zettelkasten note
+TEMPLATE="$HOME/Personal/Notes/Templates/note.tex"
+FOLDER="$HOME/Personal/Notes/0-Inbox"
+
+# Ensure the 0-Inbox directory exists, create it if it doesn't
+if [[ ! -d "$FOLDER" ]]; then
+  mkdir -p "$FOLDER"
+  echo "Directory $FOLDER created."
+fi
+
+# Generate a unique filename based on the current timestamp
+filename=$(date +"%Y%m%d%H%M")
+
+# Create the new note using the template
+cp "$TEMPLATE" "$FOLDER/$filename.tex"
+
+# Open the note in Neovim
+nvim "$FOLDER/$filename.tex"
+
